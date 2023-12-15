@@ -3,6 +3,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
 import pojobeans.Account;
 import pojobeans.AccountServices;
+import pojobeans.AccountRepository;
 import java.util.HashMap;
 import java.util.Map;
 @Repository
@@ -18,8 +19,8 @@ public class AccountServices2Imp1 implements AccountServices{
     public void transferMoney(long fromAccountId, long toAccountId, double amount) {
         Account account = accountRepository.find(fromAccountId);
         Account account1 = accountRepository.find(toAccountId);
-        account.setBalance(sourceAccount.getBalance()-amount);
-        account1.setBalance(targetAccount.getBalance()+amount);
+        account.setBalance(account.getBalance()-amount);
+        account1.setBalance(account1.getBalance()+amount);
         accountRepository.update(account);
         accountRepository.update(account1);
 
