@@ -2,22 +2,20 @@ package javabaseconfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import pojobeans.AccountRepository;
-import pojobeans.AccountRepositoryImpl;
-import pojobeans.AccountService;
-import pojobeans.AccountServiceImpl;
+import pojobeans.AccountRepositoryImp1;
+import pojobeans.AccountServices;
+import pojobeans.AccountServicesImp1;
+@Configuration
 public class BeanConfiguration {
-    @Configuration
-    public class BeanConfiguration {
         @Bean
-        public AccountService accountService(){
-            AccountServiceImpl bean = new AccountServiceImpl();
+        public AccountServices accountService(){
+            AccountServicesImp1 bean = new AccountServicesImp1();
             bean.setAccountRepository(accountDao());
             return bean;
         }
         @Bean
         public AccountRepository accountDao (){
-            AccountRepositoryImpl bean = new AccountRepositoryImpl();
+            AccountRepositoryImp1 bean = new AccountRepositoryImp1();
             return bean;
         }
     }
-}
