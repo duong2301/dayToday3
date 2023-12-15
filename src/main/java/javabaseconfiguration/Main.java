@@ -1,11 +1,11 @@
 package javabaseconfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import pojobeans.AccountService;
+import pojobeans.AccountServices;
 
 public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfiguration.class);
-        AccountService accountService = applicationContext.getBean("accountService", AccountService.class);
+        AccountServices accountService = applicationContext.getBean("accountService", AccountServices.class);
 
         System.out.println("Before money transfer");
         System.out.println("Account 1 balance:"+accountService.getAccount(1).getBalance());
