@@ -1,2 +1,9 @@
-package com.example.demo1;public class Demo1ApplicationTests {
+package com.example.demo1;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+@SpringBootTest
+public class Demo1ApplicationTests {
+    @Test
+    void contextLoads() {
+    }
 }
